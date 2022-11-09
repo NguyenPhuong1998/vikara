@@ -106,7 +106,8 @@ function searchYoutube() {
     method: "POST",
     headers: myHeaders,
     body: raw,
-    redirect: "follow"
+    redirect: "follow",
+    mode: 'no-cors'
   };
 
   fetch("https://www.youtube.com/youtubei/v1/search", requestOptions)
