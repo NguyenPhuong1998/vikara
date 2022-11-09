@@ -77,6 +77,7 @@ function searchYoutube() {
   myHeaders.append("Connection", "keep-alive");
   myHeaders.append("TE", "trailers");
   myHeaders.append("Access-Control-Allow-Origin", "*");
+  myHeaders.append('Access-Control-Allow-Credentials', 'true');
 
   var raw = JSON.stringify({
     context: {
