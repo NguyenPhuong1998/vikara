@@ -56,63 +56,13 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 function searchYoutube() {
-  var myHeaders = new Headers();
-  myHeaders.append(
-    "User-Agent",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0"
-  );
-  myHeaders.append("Accept", "*/*");
-  myHeaders.append("Accept-Language", "en-US,en;q=0.5");
-  myHeaders.append("Accept-Encoding", "gzip, deflate, br");
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("X-Youtube-Bootstrap-Logged-In", "false");
-  myHeaders.append("X-Youtube-Client-Name", "1");
-  myHeaders.append("X-Youtube-Client-Version", "2.20221026.05.00");
-  myHeaders.append("Origin", "https://www.youtube.com");
-  myHeaders.append("Sec-Fetch-Dest", "empty");
-  myHeaders.append("Sec-Fetch-Mode", "same-origin");
-  myHeaders.append("Sec-Fetch-Site", "same-origin");
-  myHeaders.append("Referer", "https://www.youtube.com/");
-  myHeaders.append("Alt-Used", "www.youtube.com");
-  myHeaders.append("Connection", "keep-alive");
-  myHeaders.append("TE", "trailers");
-  myHeaders.append("Access-Control-Allow-Origin", "*");
-  myHeaders.append('Access-Control-Allow-Credentials', 'true');
-
-  var raw = JSON.stringify({
-    context: {
-      client: {
-        hl: "en",
-        gl: "VN",
-        userAgent:
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0,gzip(gfe)",
-        clientName: "WEB",
-        clientVersion: "2.20221026.05.00",
-        osName: "Windows",
-        osVersion: "10.0",
-        originalUrl: "https://www.youtube.com/results?search_query=perfect",
-        platform: "DESKTOP",
-        browserName: "Firefox",
-        browserVersion: "106.0",
-        acceptHeader:
-          "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        utcOffsetMinutes: 420,
-        timeZone: "Asia/Bangkok"
-      }
-    },
-    query: "perfect"
-  });
-
   var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-    mode: 'no-cors'
+    method: 'GET',
+    redirect: 'follow'
   };
-
-  fetch("https://www.youtube.com/youtubei/v1/search", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
+  
+  fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=perfect&type=video&key=AIzaSyBvoC3r9qzkrrX-nTcUd6Z1xONs4X5fdnU", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 }
