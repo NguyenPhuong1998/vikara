@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <head>
+  <title>Vikara</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -8,10 +10,11 @@
 
 <body>
   <div class="grid-container" , height: 100%>
-    <!-- <div class="item-header">Header</div> -->
+
     <div style="--ratio: 16/9;" class="item-player">
       <div id="player"></div>
     </div>
+
     <div class="item-description">
       <div class="grid-description">
         <div class="item-playing">
@@ -37,454 +40,59 @@
         </div>
       </div>
     </div>
+
     <div class="item-search">
       <!-- Search -->
       <div style="width:100%; overflow:auto">
         <div class="tab">
-          <button class="tablinks" onclick="openCity(event, 'Search')" id="defaultOpen">Search</button>
-          <button class="tablinks" onclick="openCity(event, 'Next')">Next</button>
+          <button class="tablinks" onclick="openCity(event, 'Search')">Tìm kiếm</button>
+          <button class="tablinks" onclick="openCity(event, 'Next')" id="defaultOpen">Tiếp theo</button>
         </div>
 
         <div id="Search" class="tabcontent">
           <div class="example">
-            <input type="text" placeholder="Search.." name="search">
+            <input type="text" placeholder="Search.." name="search" id="textboxSearch">
             <button type="submit" onclick="searchYoutube()"><i class="fa fa-search"></i></button>
-            <div style="width:100%">
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>Headline</h3>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>Headline</h3>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                  </li>
-                </ul>
-              </div>
+            <div style="width:100%" id="contentSearch">
+              <ul>
+              </ul>
             </div>
           </div>
         </div>
 
         <div id="Next" class="tabcontent">
           <div class="example">
-            <div style="width:100%">
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
-                    <p>KEYO Official</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>Headline</h3>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li>
-                    <img
-                      src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
-                    <h3>Headline</h3>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                  </li>
-                </ul>
-              </div>
+            <div style="width:100%" id="contentNext" class="accordion">
+              <ul>
+                <div class="nextItem" name="next_1" onclick="test_menu()">
+                  <img src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
+                  <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
+                  <p>KEYO Official</p>
+                </div>
+                <div class="nextItem" name="next_2" onclick="test_menu()">
+                  <img src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
+                  <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
+                  <p>KEYO Official</p>
+                </div>
+                <div class="nextItem" name="next_3" onclick="test_menu()">
+                  <img src="https://i.ytimg.com/vi/fb9KXo2y06A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClHnrUA9qAoK05a8cFaLAq0p4tEw" />
+                  <h3>[KARAOKE] TONG PHU - KEYO - Beat Chuan Tone Nam</h3>
+                  <p>KEYO Official</p>
+                </div>
+              </ul>
             </div>
           </div>
         </div>
 
       </div>
-
     </div>
   </div>
   
+  <div class="hide" id="rmenu">
+    <button id="rmenu_top" type="button">Top</button>
+    <button id="rmenu_delete" type="button">Delete</button>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="webapp.js"></script>
 </body>
