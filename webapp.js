@@ -1,4 +1,5 @@
 var nextVideos = [];
+var isPlay = false;
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement("script");
@@ -30,16 +31,67 @@ function onPlayerReady(event) {
   // event.target.playVideo();
 }
 
+function nextVideo() {
+  if (nextVideo.length === 0) return;
+
+  const item = nextVideos.shift();
+  updateContentNext();
+
+  player.loadVideoById(item["videoId"]);
+  player.playVideo();
+  isPlay = true;
+}
+
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
 //    the player should play for ten seconds and then stop.
 function onPlayerStateChange(event) {
   console.log("event youtube palyer:", event.data);
-  if (event.data == YT.PlayerState.ENDED) {
-    const item = nextVideos.shift();
-    updateContentNext();
+  switch (event.data) {
+    case YT.PlayerState.ENDED:
+      nextVideo();
+      break;
 
-    player.loadVideoById(item["videoId"]);
+    case YT.PlayerState.PLAYING:
+      isPlay = true;
+      break;
+
+    case YT.PlayerState.PAUSED:
+      isPlay = false;
+      break;
+
+    default:
+      break;
+  }
+}
+function controlVideo(eventName) {
+  switch (eventName) {
+    case "Replay":
+      console.log("Replay");
+      break;
+
+    case "Pause":
+      if (isPlay) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+      break;
+
+    case "Next":
+      nextVideo();
+      break;
+
+    case "Mute":
+      if (player.isMuted()) {
+        player.unMute();
+      } else {
+        player.mute();
+      }
+      break;
+
+    default:
+      break;
   }
 }
 
@@ -202,9 +254,13 @@ function test_menu() {
     }
   }
 
+  var temp_x = mouseX(event);
+  var body_x = document.getElementsByTagName("body")[0].offsetWidth;
+  temp_x = body_x - temp_x < 113 ? body_x - 113 : temp_x;
+
   document.getElementById("rmenu").className = "show";
   document.getElementById("rmenu").style.top = mouseY(event) + "px";
-  document.getElementById("rmenu").style.left = mouseX(event) + "px";
+  document.getElementById("rmenu").style.left = temp_x + "px";
 
   var index = event.currentTarget.attributes.name.value.split("_")[1];
   document.getElementById("rmenu_top").onclick = function () {
