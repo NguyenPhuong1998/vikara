@@ -16,7 +16,7 @@ app.get('/*', function(req, res) {
     }
     
     if (url.endsWith(".html") || url.endsWith(".css") || url.endsWith(".js")) {
-        console.log('views' + url);
+        console.log(path.join(__dirname, 'views' + url));
         res.sendFile(path.join(__dirname, 'views' + url));
     }
 });
