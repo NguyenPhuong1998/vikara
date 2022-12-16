@@ -7,15 +7,17 @@ app.use(express.json({ extended: false }));
 
 app.use("/api/product", product);
 
-// app.use("/", express.static("webapp"))
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'webapp/index.html'));
-});
-app.get('/styles.css', function(req, res) {
-    res.sendFile(path.join(__dirname, 'webapp/styles.css'));
-});
-app.get('/webapp.js', function(req, res) {
-    res.sendFile(path.join(__dirname, 'webapp/webapp.js'));
+app.get('/*', function(req, res) {
+    var url = req.url.toString();
+    console.log(url);
+
+    if (url == "/") {
+        url = "/index.html";
+    }
+    
+    if (url.endsWith(".html") || url.endsWith(".css") || url.endsWith(".js")) {
+        res.sendFile(path.join(__dirname, 'views' + url));
+    }
 });
 
 const PORT = process.env.PORT || 8080;
