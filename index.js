@@ -17,14 +17,14 @@ app.get('/*', function(req, res) {
     
     if (url.endsWith(".html") || url.endsWith(".css") || url.endsWith(".js")) {
         var pathFile = path.join(__dirname, 'views' + url)
-        // console.log(fs.readdirSync(path.join(__dirname, 'views')))
-        if (fs.existsSync(pathFile)) {
+        console.log(fs.readdirSync(pathFile))
+        // if (fs.existsSync(pathFile)) {
             res.sendFile(pathFile);
-        }
-        else {
-            res.writeHead(404);
-            res.write("Not found");
-        }
+        // }
+        // else {
+        //     res.writeHead(404);
+        //     res.write("Not found");
+        // }
     }
 });
 
