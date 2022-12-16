@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const product = require("./api/product");
 const path = require('path');
+var fs = require('fs');
 
 app.use(express.json({ extended: false }));
 
@@ -10,6 +11,7 @@ app.use("/api/product", product);
 app.get('/*', function(req, res) {
     var url = req.url.toString();
     console.log(url);
+    console.log(fs.readdirSync(path.join(__dirname, 'views')))
 
     if (url == "/") {
         url = "/index.html";
