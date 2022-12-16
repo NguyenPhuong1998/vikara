@@ -20,16 +20,16 @@ function onYouTubeIframeAPIReady() {
       playsinline: 1
     },
     events: {
-      onReady: onPlayerReady,
+      // onReady: onPlayerReady,
       onStateChange: onPlayerStateChange
     }
   });
 }
 
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-  // event.target.playVideo();
-}
+// // 4. The API will call this function when the video player is ready.
+// function onPlayerReady(event) {
+//   event.target.playVideo();
+// }
 
 function nextVideo() {
   if (nextVideo.length === 0) return;
@@ -53,9 +53,19 @@ function onPlayerStateChange(event) {
       break;
     case YT.PlayerState.PLAYING:
       isPlay = true;
+      var myNode = document.getElementById("contentSearch");
+      while (myNode.firstChild) {
+        myNode.firstChild.remove();
+      }
+      myNode.innerHTML = `<i class="fa fa-pause"></i></button>`;
       break;
     case YT.PlayerState.PAUSED:
       isPlay = false;
+      var myNode = document.getElementById("contentSearch");
+      while (myNode.firstChild) {
+        myNode.firstChild.remove();
+      }
+      myNode.innerHTML = `<i class="fa fa-play"></i></button>`;
       break;
     default:
       break;
@@ -67,7 +77,7 @@ function controlVideo(eventName) {
       console.log("Replay");
       break;
       
-    case "Pause":
+    case "Pause/Play":
       if (isPlay) player.pauseVideo();
       else player.playVideo();
       break;
@@ -76,9 +86,19 @@ function controlVideo(eventName) {
       nextVideo();
       break;
 
-    case "Mute":
-      if (player.isMuted()) player.unMute();
-      else  player.mute();
+    case "Mute/Unmute":
+      var myNode = document.getElementById("contentSearch");
+      while (myNode.firstChild) {
+        myNode.firstChild.remove();
+      }
+      if (player.isMuted()) {
+        player.unMute();
+        myNode.innerHTML = `<i class="fa fa-volume-up"></i></button>`;
+      }
+      else {
+        player.mute();
+        myNode.innerHTML = `<i class="fa fa-volume-mute"></i></button>`;
+      }
       break;
 
     default:
