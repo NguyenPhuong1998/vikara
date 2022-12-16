@@ -8,18 +8,19 @@ app.use(express.json({ extended: false }));
 
 app.use("/api/product", product);
 
-app.get('/*', function(req, res) {
+app.get('/*', function (req, res) {
     var url = req.url.toString();
 
     if (url == "/") {
         url = "/index.html";
     }
-    
+
     if (url.endsWith(".html") || url.endsWith(".css") || url.endsWith(".js")) {
         var pathFile = path.join(__dirname, 'views' + url)
-        console.log(fs.readdirSync(pathFile))
+        console.log(fs.readdirSync(path.join(__dirname, 'views')))
+        res.sendFile(pathFile);
         // if (fs.existsSync(pathFile)) {
-            res.sendFile(pathFile);
+        //     res.sendFile(pathFile);
         // }
         // else {
         //     res.writeHead(404);
