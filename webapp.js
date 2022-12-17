@@ -95,11 +95,11 @@ function controlVideo(eventName) {
       }
       if (player.isMuted()) {
         player.unMute();
-        myNode.innerHTML = `<i class="fa fa-volume-up"></i></button>`;
+        myNode.innerHTML = `<i class="fa fa-volume-up"></i>`;
       }
       else {
         player.mute();
-        myNode.innerHTML = `<i class="fa fa-volume-mute"></i></button>`;
+        myNode.innerHTML = `<i class="fa fa-volume-mute"></i>`;
       }
       break;
 

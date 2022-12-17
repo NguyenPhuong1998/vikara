@@ -21,19 +21,16 @@
   }
   
   .item-header {
-    background-color: #f2a05d;
     grid-column: 1/3;
     grid-row: 1/2;
     align-items: center;
   }
   .item-player {
     aspect-ratio: var(--ratio);
-    background-color: #61e8e1;
     grid-column: 1/2;
     grid-row: 2/3;
   }
   .item-description {
-    background-color: #87e861;
     grid-column: 1/2;
     grid-row: 3/5;
   }
