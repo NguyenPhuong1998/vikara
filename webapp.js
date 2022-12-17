@@ -32,9 +32,11 @@ function onYouTubeIframeAPIReady() {
 // }
 
 function nextVideo() {
-  if (nextVideo.length === 0) return;
+  console.log("Next");
+  if (nextVideos.length === 0) return;
 
   const item = nextVideos.shift();
+  console.log(item);
   updateContentNext();
 
   player.loadVideoById(item["videoId"]);
