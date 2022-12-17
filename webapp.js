@@ -76,7 +76,8 @@ function onPlayerStateChange(event) {
 function controlVideo(eventName) {
   switch (eventName) {
     case "Replay":
-      console.log("Replay");
+      player.seekTo(0);
+      player.playVideo();
       break;
       
     case "Pause/Play":
