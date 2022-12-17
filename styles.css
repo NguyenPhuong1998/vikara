@@ -90,7 +90,7 @@
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  .item-controll-pause-play {
+  .item-controll-play-pause {
     background-color: #87e861;
     grid-column: 2/3;
     grid-row: 1/2;

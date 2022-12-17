@@ -55,7 +55,7 @@ function onPlayerStateChange(event) {
       break;
     case YT.PlayerState.PLAYING:
       isPlay = true;
-      var myNode = document.getElementById("contentSearch");
+      var myNode = document.getElementById("button-pause-play");
       while (myNode.firstChild) {
         myNode.firstChild.remove();
       }
@@ -63,7 +63,7 @@ function onPlayerStateChange(event) {
       break;
     case YT.PlayerState.PAUSED:
       isPlay = false;
-      var myNode = document.getElementById("contentSearch");
+      var myNode = document.getElementById("button-pause-play");
       while (myNode.firstChild) {
         myNode.firstChild.remove();
       }
@@ -89,7 +89,7 @@ function controlVideo(eventName) {
       break;
 
     case "Mute/Unmute":
-      var myNode = document.getElementById("contentSearch");
+      var myNode = document.getElementById("button-mute-unmute");
       while (myNode.firstChild) {
         myNode.firstChild.remove();
       }
