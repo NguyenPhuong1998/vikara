@@ -99,7 +99,7 @@ function controlVideo(eventName) {
       }
       else {
         player.mute();
-        myNode.innerHTML = '<i class="fa fa-volume-mute"></i>';
+        myNode.innerHTML = '<i class="fa fa-volume-off"></i>';
       }
       break;
 
