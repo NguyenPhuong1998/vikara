@@ -59,7 +59,7 @@ function onPlayerStateChange(event) {
       while (myNode.firstChild) {
         myNode.firstChild.remove();
       }
-      myNode.innerHTML = `<i class="fa fa-pause"></i></button>`;
+      myNode.innerHTML = '<i class="fa fa-pause"></i>';
       break;
     case YT.PlayerState.PAUSED:
       isPlay = false;
@@ -67,7 +67,7 @@ function onPlayerStateChange(event) {
       while (myNode.firstChild) {
         myNode.firstChild.remove();
       }
-      myNode.innerHTML = `<i class="fa fa-play"></i></button>`;
+      myNode.innerHTML = '<i class="fa fa-play"></i>';
       break;
     default:
       break;
