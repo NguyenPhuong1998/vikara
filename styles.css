@@ -7,15 +7,14 @@
   }
   .grid-container {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 75% 25%;
     grid-template-rows: auto auto auto minmax(100px, 1fr);
     box-sizing: border-box;
-    background-color: #d9deff;
     width: 99.9vw;
     height: 99.9vh;
   }
   .grid-container > div {
-    margin: 4px;
+    margin: 3px;
     display: flex;
     justify-content: center;
     align-items: top;
@@ -39,7 +38,7 @@
     grid-row: 3/5;
   }
   .item-search {
-    background-color: #f25757;
+    background-color: #f1f1f1;
     grid-column: 2/3;
     grid-row: 2/5;
   }
@@ -171,7 +170,7 @@
   }
   
   ul div:hover {
-    background: #eee;
+    background: #ddd;
     cursor: pointer;
   }
   
@@ -189,8 +188,8 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
+    padding: 10px 12px;
+    transition: 0.5s;
     font-size: 17px;
   }
   
