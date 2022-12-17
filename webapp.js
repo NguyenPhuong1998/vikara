@@ -16,8 +16,8 @@ function onYouTubeIframeAPIReady() {
     width: "100%",
     height: "100%",
     videoId: "fb9KXo2y06A",
-    controls: 0,
     playerVars: {
+      controls: 0,
       playsinline: 1
     },
     events: {
