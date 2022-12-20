@@ -1,4 +1,10 @@
 var nextVideos = [];
+var nowVideos =   {
+  "videoId": "fb9KXo2y06A",
+  "title": "Vietsub | Perfect - Ed Sheeran | Lyrics Video",
+  "channelTitle": "Vietsub Mỗi Ngày",
+  "image": "https://i.ytimg.com/vi/fb9KXo2y06A/default.jpg"
+};
 var isPlay = false;
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -15,7 +21,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     width: "100%",
     height: "100%",
-    videoId: "fb9KXo2y06A",
+    videoId: nowVideos["videoId"],
     playerVars: {
       modestbranding: 1,
       playsinline: 1
@@ -36,11 +42,10 @@ function nextVideo() {
   console.log("Next");
   if (nextVideos.length === 0) return;
 
-  const item = nextVideos.shift();
-  console.log(item);
+  nowVideos = nextVideos.shift();
   updateContentNext();
 
-  player.loadVideoById(item["videoId"]);
+  player.loadVideoById(nowVideos["videoId"]);
   player.playVideo();
   isPlay = true;
 }
@@ -189,6 +194,8 @@ function updateContentSearch() {
 }
 
 function updateContentNext() {
+  updateContentPreviewNext();
+  
   var myNode = document.getElementById("contentNext");
 
   // Xóa các phần tử cũ
@@ -207,7 +214,7 @@ function updateContentNext() {
     text += `<div class="nextItem" onclick="viewNavigationMenu(${index})">
         <img src="${value["image"]}"/>
         <h3>${value["title"]}</h3>
-        <p>${value["channelTitle"]}</p>
+        <p style="padding-top: 7px;">${value["channelTitle"]}</p>
       </div>\n`;
   }
 }
@@ -221,12 +228,16 @@ function updateContentPreviewNext() {
   }
 
   // Them video moi
-  let text = '<p>Danh sách phát:</p><ol start="0">';
-  nextVideos.forEach((element, index) => myFunction(index, element));
-  text += "</ok>";
+  let text = '';
+  myFunction(nowVideos);
+  var n = Math.min(nextVideos.length, 3)
+  for (let i = 0; i < n; i++) {
+    element = nextVideos[i];
+    myFunction(element);
+  }
   myNode.innerHTML = text;
 
-  function myFunction(index, value) {
+  function myFunction(value) {
     if (value === undefined) return;
     text += `<li>${value["title"]}</li>\n`;
   }
@@ -308,4 +319,3 @@ nextVideos = [
   }
 ]
 updateContentNext();
-updateContentPreviewNext();

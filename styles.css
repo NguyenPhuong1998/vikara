@@ -4,6 +4,7 @@
     margin: 0px;
     font-family: "Arial";
     font-weight: bold;
+    font-size: 14px;
   }
   .grid-container {
     display: grid;
@@ -16,14 +17,12 @@
   .grid-container > div {
     margin: 3px;
     display: flex;
-    justify-content: center;
     align-items: top;
   }
   
   .item-header {
     grid-column: 1/3;
     grid-row: 1/2;
-    align-items: center;
   }
   .item-player {
     aspect-ratio: var(--ratio);
@@ -66,7 +65,6 @@
   .grid-description > div {
     margin: 4px;
     display: flex;
-    justify-content: center;
     align-items: top;
   }
   .grid-description > div > button {
@@ -101,9 +99,19 @@
     grid-row: 1/2;
   }
   .item-next {
-    background-color: #f2af57;
     grid-column: 5/6;
     grid-row: 1/4;
+  }
+
+  .item-next div {
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .item-next div ol li {
+    font-family: "Arial";
+    font-weight: normal;
+    font-size: 12px;
   }
   
   div.example input[type="text"] {
@@ -141,7 +149,7 @@
   }
   
   h3 {
-    font: bold 14px/1.2 Helvetica, Verdana, sans-serif;
+    font: bold 13px Helvetica, Verdana, sans-serif;
   }
   
   div img {
@@ -153,7 +161,7 @@
   }
   
   div p {
-    font: 200 12px/1.1 Georgia, Times New Roman, serif;
+    font: 200 11px Georgia, Arial, serif;
   }
   
   ul div {
@@ -182,7 +190,7 @@
     cursor: pointer;
     padding: 10px 12px;
     transition: 0.5s;
-    font-size: 17px;
+    font-size: 14px;
   }
   
   /* Change background color of buttons on hover */
