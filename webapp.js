@@ -1,5 +1,5 @@
 var nextVideos = [];
-var nowVideos =   {
+var nowVideos = {
   "videoId": "fb9KXo2y06A",
   "title": "Vietsub | Perfect - Ed Sheeran | Lyrics Video",
   "channelTitle": "Vietsub Mỗi Ngày",
@@ -85,7 +85,7 @@ function controlVideo(eventName) {
       player.seekTo(0);
       player.playVideo();
       break;
-      
+
     case "Pause/Play":
       if (isPlay) player.pauseVideo();
       else player.playVideo();
@@ -195,7 +195,7 @@ function updateContentSearch() {
 
 function updateContentNext() {
   updateContentPreviewNext();
-  
+
   var myNode = document.getElementById("contentNext");
 
   // Xóa các phần tử cũ
