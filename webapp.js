@@ -189,7 +189,6 @@ function updateContentSearch() {
 }
 
 function updateContentNext() {
-  console.log(nextVideos)
   var myNode = document.getElementById("contentNext");
 
   // Xóa các phần tử cũ
@@ -210,6 +209,26 @@ function updateContentNext() {
         <h3>${value["title"]}</h3>
         <p>${value["channelTitle"]}</p>
       </div>\n`;
+  }
+}
+
+function updateContentPreviewNext() {
+  var myNode = document.getElementById("contentPreviewNext");
+
+  // Xóa các phần tử cũ
+  while (myNode.firstChild) {
+    myNode.firstChild.remove();
+  }
+
+  // Them video moi
+  let text = '<p>Danh sách phát:</p><ol start="0">';
+  nextVideos.forEach((element, index) => myFunction(index, element));
+  text += "</ok>";
+  myNode.innerHTML = text;
+
+  function myFunction(index, value) {
+    if (value === undefined) return;
+    text += `<li>${value["title"]}</li>\n`;
   }
 }
 
@@ -289,3 +308,4 @@ nextVideos = [
   }
 ]
 updateContentNext();
+updateContentPreviewNext();
