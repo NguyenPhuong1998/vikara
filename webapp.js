@@ -132,6 +132,14 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
+var inputTextboxSearch = document.getElementById("textboxSearch");
+inputTextboxSearch.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("buttonSearch").click();
+  }
+});
+
 var searchVideos = [];
 function searchYoutube() {
   var textSearch = encodeURIComponent(
