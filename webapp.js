@@ -145,7 +145,10 @@ function searchYoutube() {
   var textSearch = encodeURIComponent(
     document.getElementById("textboxSearch").value
   );
-  console.log(textSearch);
+  textSearch = textSearch.trim()
+  if (textSearch == "") {
+    return;
+  }
 
   var requestOptions = {
     method: "GET",
