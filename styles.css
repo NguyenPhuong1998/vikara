@@ -73,12 +73,12 @@
   
   .item-more {
     aspect-ratio: var(--ratio);
-    background-color: #61e8e1;
+    /* background-color: #61e8e1; */
     grid-column: 1/5;
     grid-row: 2/3;
   }
   .item-advertisement {
-    background-color: #d1d876;
+    /* background-color: #d1d876; */
     grid-column: 1/5;
     grid-row: 3/4;
   }
