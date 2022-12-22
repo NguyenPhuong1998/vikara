@@ -133,7 +133,7 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 var inputTextboxSearch = document.getElementById("textboxSearch");
-inputTextboxSearch.addEventListener("keypress", function(event) {
+inputTextboxSearch.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("buttonSearch").click();
@@ -142,13 +142,21 @@ inputTextboxSearch.addEventListener("keypress", function(event) {
 
 var searchVideos = [];
 function searchYoutube() {
-  var textSearch = encodeURIComponent(
-    document.getElementById("textboxSearch").value
-  );
+  var textSearch = document.getElementById("textboxSearch").value;
+
   textSearch = textSearch.trim()
   if (textSearch == "") {
     return;
   }
+
+  if (document.getElementById("checkbox_karaoke").checked) {
+    if (textSearch.toLowerCase().indexOf("karaoke") == -1) {
+      textSearch += " karaoke"
+    }
+  }
+  console.log(textSearch)
+
+  textSearch = encodeURIComponent(textSearch);
 
   var requestOptions = {
     method: "GET",
@@ -296,37 +304,4 @@ function viewNavigationMenu(index) {
 
   isHidenNavigationMenu = false;
 }
-
-nextVideos = [
-  {
-    "videoId": "qmD5zW1lfC0",
-    "title": "Bài hát ABC cho trẻ  Học tiếng Anh bằng ABC Song",
-    "channelTitle": "DreGGor",
-    "image": "https://i.ytimg.com/vi/qmD5zW1lfC0/default.jpg"
-  },
-  {
-    "videoId": "yqsux6Y1D1M",
-    "title": "ABC Song - Bài hát ABC Tiếng Việt [ Full ] | Giúp Bé Học Chữ Cái Qua Bài hát | VOI TV",
-    "channelTitle": "VOI TV",
-    "image": "https://i.ytimg.com/vi/yqsux6Y1D1M/default.jpg"
-  },
-  {
-    "videoId": "xY3Z8acE8ew",
-    "title": "The ABC Song | CoComelon Nursery Rhymes &amp; Kids Songs",
-    "channelTitle": "Cocomelon - Nursery Rhymes",
-    "image": "https://i.ytimg.com/vi/xY3Z8acE8ew/default.jpg"
-  },
-  {
-    "videoId": "hq3yfQnllfQ",
-    "title": "Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children",
-    "channelTitle": "ChuChu TV Nursery Rhymes & Kids Songs",
-    "image": "https://i.ytimg.com/vi/hq3yfQnllfQ/default.jpg"
-  },
-  {
-    "videoId": "GgXlqcklJ7Y",
-    "title": "Çfare fitoi Irma Libohova nga Kenga Magjike? Ne &#39;Abc e pasdites&#39; diva: A do duhet ze per te kenduar?",
-    "channelTitle": "ABC News Albania",
-    "image": "https://i.ytimg.com/vi/GgXlqcklJ7Y/default.jpg"
-  }
-]
 updateContentNext();
