@@ -1,9 +1,9 @@
 var nextVideos = [];
 var nowVideos = {
-  "videoId": "fb9KXo2y06A",
-  "title": "Vietsub | Perfect - Ed Sheeran | Lyrics Video",
-  "channelTitle": "Vietsub Mỗi Ngày",
-  "image": "https://i.ytimg.com/vi/fb9KXo2y06A/default.jpg"
+  "videoId": "4baKEw02mB4",
+  "title": "Hướng dẫn ViKara",
+  "channelTitle": "Phạm Nguyên Phương",
+  "image": "https://i.ytimg.com/vi/4baKEw02mB4/default.jpg"
 };
 var isPlay = false;
 
