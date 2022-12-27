@@ -171,7 +171,7 @@ function searchYoutube() {
     .then((response) => response.text())
     .then((rawResult) => {
       searchVideos = [];
-      JSON.parse(rawResult)["items"].forEach((video) => {
+      JSON.parse(rawResult).forEach((video) => {
         searchVideos.push({
           videoId: video["id"],
           title: video["title"],
