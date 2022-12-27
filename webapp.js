@@ -164,7 +164,7 @@ function searchYoutube() {
   };
 
   fetch(
-    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=AIzaSyBvoC3r9qzkrrX-nTcUd6Z1xONs4X5fdnU&q=" +
+    "https://vikara-api.vercel.app/youtube-search?keyword=" +
     textSearch,
     requestOptions
   )
@@ -173,15 +173,35 @@ function searchYoutube() {
       searchVideos = [];
       JSON.parse(rawResult)["items"].forEach((video) => {
         searchVideos.push({
-          videoId: video["id"]["videoId"],
-          title: video["snippet"]["title"],
-          channelTitle: video["snippet"]["channelTitle"],
-          image: video["snippet"]["thumbnails"]["default"]["url"]
+          videoId: video["id"],
+          title: video["title"],
+          channelTitle: video["author"],
+          image: video["thumbnail_src"]
         });
       });
       updateContentSearch();
     })
     .catch((error) => console.log("error", error));
+
+  // fetch(
+  //   "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=AIzaSyBvoC3r9qzkrrX-nTcUd6Z1xONs4X5fdnU&q=" +
+  //   textSearch,
+  //   requestOptions
+  // )
+  //   .then((response) => response.text())
+  //   .then((rawResult) => {
+  //     searchVideos = [];
+  //     JSON.parse(rawResult)["items"].forEach((video) => {
+  //       searchVideos.push({
+  //         videoId: video["id"]["videoId"],
+  //         title: video["snippet"]["title"],
+  //         channelTitle: video["snippet"]["channelTitle"],
+  //         image: video["snippet"]["thumbnails"]["default"]["url"]
+  //       });
+  //     });
+  //     updateContentSearch();
+  //   })
+  //   .catch((error) => console.log("error", error));
 }
 
 function addVideo(index) {
