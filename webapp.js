@@ -185,6 +185,8 @@ function searchYoutube() {
 }
 
 function addVideo(index) {
+  if (nextVideos.includes(searchVideos[index])) return;
+
   nextVideos.push(searchVideos[index]);
   updateContentNext();
 }
