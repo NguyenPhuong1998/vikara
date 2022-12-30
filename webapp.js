@@ -1,10 +1,21 @@
-var nextVideos = [];
-var nowVideos = {
-  "videoId": "4baKEw02mB4",
-  "title": "Hướng dẫn ViKara",
-  "channelTitle": "Phạm Nguyên Phương",
-  "image": "https://i.ytimg.com/vi/4baKEw02mB4/default.jpg"
-};
+var nextVideos = null;
+var nowVideos = null;
+
+if(window.localStorage) {
+  nextVideos = JSON.parse(window.localStorage.getItem('nextVideos'));
+  nowVideos = JSON.parse(window.localStorage.getItem('nowVideos'));
+}
+if (nextVideos == null) {
+  nextVideos = []
+}
+if (nowVideos == null) {
+  nowVideos = {
+    "videoId": "4baKEw02mB4",
+    "title": "Hướng dẫn ViKara",
+    "channelTitle": "Phạm Nguyên Phương",
+    "image": "https://i.ytimg.com/vi/4baKEw02mB4/default.jpg"
+  };
+}
 var isPlay = false;
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -216,6 +227,9 @@ function updateContentSearch() {
 
 function updateContentNext() {
   updateContentPreviewNext();
+
+  localStorage.setItem('nextVideos', JSON.stringify(nextVideos))
+  localStorage.setItem('nowVideos', JSON.stringify(nowVideos))
 
   var myNode = document.getElementById("contentNext");
 
